@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enguloso - Salgadinhos Congelados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="header-container">
+      <div class="logo-area">
+        <h1>Enguloso</h1>
+        <p>Salgadinhos congelados prontos para qualquer festa!</p>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRINCIPAL -->
+  <main id="conteudo-prprincipal">
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <h2>Salgadinhos sempre frescos, a qualquer hora!</h2>
+        <p>Com a Enguloso, você recebe <strong>coxinhas, quibes e risoles</strong> congelados, prontos para fritar.</p>
+
+        <div class="hero-cta">
+          <button class="btn-principal" onclick="scrollToProducts()">Ver produtos</button>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          (Substituir por imagem real)
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="products-section">
+      <h2>Nossos Salgadinhos</h2>
+
+      <div class="product-grid">
+        
+        <article class="product-card">
+          <figure>
+
+             <img src="img/coxinha.jpg" alt="Coxinhas de frango douradas">
+          </figure>
+          <h3>Coxinha de Frango</h3>
+          <p>Massa macia, recheio cremoso e sabor clássico.</p>
+          <p class="product-price">R$ 29,90</p>
+          <button class="btn-secundario" onclick="comprar('Coxinha de Frango')">Comprar</button>
+        </article>
+
+        <article class="product-card">
+          <figure>
+            <img src="img/quibe.jpg" alt="Quibes fritos crocantes">
+          </figure>
+          <h3>Quibe Recheado</h3>
+          <p>Carne selecionada, tempero suave e textura crocante.</p>
+          <p class="product-price">R$ 31,90</p>
+          <button class="btn-secundario" onclick="comprar('Quibe Recheado')">Comprar</button>
+        </article>
+
+        <article class="product-card">
+          <figure>
+            <img src="img/risoles.jpg" alt="Risoles de presunto e queijo">
+          </figure>
+          <h3>Risoles Presunto & Queijo</h3>
+          <p>Recheio cremoso e ideal para qualquer ocasião.</p>
+          <p class="product-price">R$ 32,90</p>
+          <button class="btn-secundario" onclick="comprar('Risoles')">Comprar</button>
+        </article>
+  </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact-section">
+      <h2>Contato</h2>
+
+      <form>
+        <label>Nome</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Mensagem</label>
+        <textarea required></textarea>
+
+        <button class="btn-principal" type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 2025 Enguloso - Salgadinhos Congelados</p>
+    <p>Enguloso |+55 (47) 99199-5738</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
