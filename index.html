@@ -22,6 +22,7 @@
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#carrinho">Carrinho</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -49,70 +50,125 @@
     </section>
 
     <!-- PRODUTOS -->
-    <section id="produtos" class="products-section">
+    <section id="produtos" class="products-section" aria-label="titulo-produtos">
       <h2>Nossos Salgadinhos</h2>
-
+      <p>Escolha seus favoritos, ajuste a quantidade e adicione no carrinho.</p>
       <div class="product-grid">
-        
-        <article class="product-card">
+       
+         <!-- COXINHA -->
+        <article class="product-card"
+                 data-nome="Coxinha de Frango"
+                 data-preco="29.90">
           <figure>
-
-             <img src="img/coxinha.jpg" alt="Coxinhas de frango douradas">
+            <img src="img/coxinha.jpg" alt="Coxinhas de frango douradas em uma travessa">
           </figure>
           <h3>Coxinha de Frango</h3>
-          <p>Massa macia, recheio cremoso e sabor clássico.</p>
-          <p class="product-price">R$ 29,90</p>
-          <button class="btn-secundario" onclick="comprar('Coxinha de Frango')">Comprar</button>
+          <p>Massa macia, recheio cremoso de frango temperado e sabor clássico.</p>
+          <p class="product-price">R$ 29,90 / pacote (25 unid.)</p>
+
+          <!-- CONTROLE DE QUANTIDADE -->
+          <div class="controle-quantidade" aria-label="Controle de quantidade da Coxinha de Frango">
+            <button type="button" class="decrementar" aria-label="Diminuir quantidade da Coxinha de Frango">−</button>
+            <span class="numero-produto" aria-live="polite">1</span>
+            <button type="button" class="incrementar" aria-label="Aumentar quantidade da Coxinha de Frango">+</button>
+          </div>
+
+          <button class="btn-secundario btn-comprar" type="button">
+            Adicionar ao carrinho
+          </button>
         </article>
 
-        <article class="product-card">
+        <!-- QUIBE -->
+        <article class="product-card"
+                 data-nome="Quibe Recheado"
+                 data-preco="31.90">
           <figure>
-            <img src="img/quibe.jpg" alt="Quibes fritos crocantes">
+          <img src="img/quibe.jpg" alt="Quibes fritos crocantes em um prato">
           </figure>
           <h3>Quibe Recheado</h3>
-          <p>Carne selecionada, tempero suave e textura crocante.</p>
-          <p class="product-price">R$ 31,90</p>
-          <button class="btn-secundario" onclick="comprar('Quibe Recheado')">Comprar</button>
+          <p>Quibe de carne com trigo selecionado e tempero suave.</p>
+          <p class="product-price">R$ 31,90 / pacote (25 unid.)</p>
+
+          <div class="controle-quantidade" aria-label="Controle de quantidade do Quibe Recheado">
+            <button type="button" class="decrementar" aria-label="Diminuir quantidade do Quibe Recheado">−</button>
+            <span class="numero-produto" aria-live="polite">1</span>
+            <button type="button" class="incrementar" aria-label="Aumentar quantidade do Quibe Recheado">+</button>
+          </div>
+
+          <button class="btn-secundario btn-comprar" type="button">
+            Adicionar ao carrinho
+          </button>
         </article>
 
-        <article class="product-card">
+        <!-- RISOLES -->
+        <article class="product-card"
+                 data-nome="Risoles Presunto & Queijo"
+                 data-preco="32.90">
           <figure>
-            <img src="img/risoles.jpg" alt="Risoles de presunto e queijo">
+            <img src="img/risoles.jpg" alt="Risoles de presunto e queijo em uma bandeja">
           </figure>
-          <h3>Risoles Presunto & Queijo</h3>
-          <p>Recheio cremoso e ideal para qualquer ocasião.</p>
-          <p class="product-price">R$ 32,90</p>
-          <button class="btn-secundario" onclick="comprar('Risoles')">Comprar</button>
+          <h3>Risoles Presunto &amp; Queijo</h3>
+          <p>Recheio cremoso de presunto e queijo, ideal para festas.</p>
+          <p class="product-price">R$ 32,90 / pacote (25 unid.)</p>
+
+          <div class="controle-quantidade" aria-label="Controle de quantidade do Risoles Presunto e Queijo">
+            <button type="button" class="decrementar" aria-label="Diminuir quantidade do Risoles Presunto e Queijo">−</button>
+            <span class="numero-produto" aria-live="polite">1</span>
+            <button type="button" class="incrementar" aria-label="Aumentar quantidade do Risoles Presunto e Queijo">+</button>
+          </div>
+
+          <button class="btn-secundario btn-comprar" type="button">
+            Adicionar ao carrinho
+          </button>
         </article>
-  </div>
+
+      </div>
+    </section>
+
+    <!-- CARRINHO -->
+    <section id="carrinho" class="cart-section" aria-labelledby="titulo-carrinho">
+      <h2 id="titulo-carrinho">Seu carrinho</h2>
+      <p id="cart-empty">Seu carrinho está vazio.</p>
+
+      <ul id="cart-items" class="cart-items" aria-live="polite" aria-label="Itens do carrinho">
+<!-- itens via JS -->
+      </ul>
+
+      <p class="cart-total">
+        Total: <span id="cart-total">R$ 0,00</span>
+      </p>
+
+      <button id="cart-clear" class="btn-secundario" type="button">
+        Limpar carrinho
+      </button>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="contact-section">
-      <h2>Contato</h2>
+    <section id="contato" class="contact-section" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Contato</h2>
 
       <form>
-        <label>Nome</label>
-        <input type="text" required>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" required>
 
-        <label>Email</label>
-        <input type="email" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" required>
 
-        <label>Mensagem</label>
-        <textarea required></textarea>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" required></textarea>
 
         <button class="btn-principal" type="submit">Enviar</button>
       </form>
     </section>
-
   </main>
 
   <!-- RODAPÉ -->
-  <footer>
+    <footer>
     <p>&copy; 2025 Enguloso - Salgadinhos Congelados</p>
-    <p>Enguloso |+55 (47) 99199-5738</p>
+    <p>Pietra Olinger | +55 (47) 99145-6703</p>
   </footer>
 
+  <!-- IMPORTANTE: JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
