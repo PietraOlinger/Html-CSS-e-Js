@@ -38,7 +38,6 @@ function updateCartDisplay() {
 // Função para calcular o total do carrinho
 function calculateTotal() {
   const total = cart.reduce((sum, item) => sum + (item.preco * item.quantidade), 0);
-  cartTotalSpan.textContent = R$ ${total.toFixed(2).replace('.', ',')};
 }
 
 // Função para adicionar item ao carrinho
