@@ -5,6 +5,7 @@
   <title>Enguloso - Salgadinhos Congelados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
+  <link href="./content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#carrinho">Carrinho</a></li>
+          <li><a  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Carrinho </a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -125,23 +126,6 @@
       </div>
     </section>
 
-    <!-- CARRINHO -->
-    <section id="carrinho" class="cart-section" aria-labelledby="titulo-carrinho">
-      <h2 id="titulo-carrinho">Seu carrinho</h2>
-      <p id="cart-empty">Seu carrinho está vazio.</p>
-
-      <ul id="cart-items" class="cart-items" aria-live="polite" aria-label="Itens do carrinho">
-<!-- itens via JS -->
-      </ul>
-
-      <p class="cart-total">
-        Total: <span id="cart-total">R$ 0,00</span>
-      </p>
-
-      <button id="cart-clear" class="btn-secundario" type="button">
-        Limpar carrinho
-      </button>
-    </section>
 
     <!-- CONTATO -->
     <section id="contato" class="contact-section" aria-labelledby="titulo-contato">
@@ -168,7 +152,37 @@
     <p>Pietra Olinger | +55 (47) 99145-6703</p>
   </footer>
 
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Seu Carrinho</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   
+    <!-- CARRINHO -->
+    <section id="carrinho" class="cart-section" aria-labelledby="titulo-carrinho">
+      <h2 id="titulo-carrinho">Seu carrinho</h2>
+      <p id="cart-empty">Seu carrinho está vazio.</p>
+
+      <ul id="cart-items" class="cart-items" aria-live="polite" aria-label="Itens do carrinho">
+<!-- itens via JS -->
+      </ul>
+
+      <p class="cart-total">
+        Total: <span id="cart-total">R$ 0,00</span>
+      </p>
+
+      <button id="cart-clear" class="btn-secundario" type="button">
+        Limpar carrinho
+      </button>
+    </section>
+  </div>
+</div>
+
   <!-- IMPORTANTE: JS externo -->
+  <script src="./content/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
